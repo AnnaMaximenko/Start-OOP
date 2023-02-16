@@ -6,13 +6,13 @@ public class marriageRelations {
     }
 
     private int whoseRelations;
-    private int partnerId;
+    private int partner;
     private int motherPartnerId;
     private int fatherPartnerId;
 
-    public marriageRelations(int whoseRelations, int partnerId, int motherPartnerId, int fatherPartnerId) {
+    public marriageRelations(int whoseRelations, int partner, int motherPartnerId, int fatherPartnerId) {
         this.whoseRelations = whoseRelations;
-        this.partnerId = partnerId;
+        this.partner = partner;
         this.motherPartnerId = motherPartnerId;
         this.fatherPartnerId = fatherPartnerId;
     }
@@ -26,11 +26,11 @@ public class marriageRelations {
     }
 
     public int getPartnerId() {
-        return partnerId;
+        return partner;
     }
 
-    public void setPartnerId(int partnerId) {
-        this.partnerId = partnerId;
+    public void setPartnerId(int partner) {
+        this.partner = partner;
     }
 
     public int getMotherPartnerId() {
@@ -51,10 +51,10 @@ public class marriageRelations {
 
     @Override
     public String toString() {
-        return "marriageRelations [whoseRelations=" + whoseRelations + ", partnerId=" + partnerId + ", motherPartnerId="
-                + motherPartnerId + ", fatherPartnerId="
+        return "Id партнера= " + partner + ", Id мамы партнера= "
+                + motherPartnerId + ",Id отца партнера= "
                 + fatherPartnerId
-                + "]";
+                + "";
     }
 
 }

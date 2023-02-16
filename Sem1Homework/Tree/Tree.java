@@ -145,9 +145,9 @@ class People {
 
     @Override
     public String toString() {
-        return "People [name=" + name + ", surname=" + surname + ", patronymic=" + patronymic + ", gender="
+        return "People: Имя=" + name + ", фамилия=" + surname + ", отчество=" + patronymic + ", пол="
                 + gender
-                + ", relations=" + relations + ", merriRelations=" + merriRelations + "]";
+                + ", отношения по браку: " + merriRelations + "";
     }
 
 }

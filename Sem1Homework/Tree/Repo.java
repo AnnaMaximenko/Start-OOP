@@ -1,90 +1,91 @@
-package Sem1Homework.Tree;
+// package Sem1Homework.Tree;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
-public class Repo {
+// public class Repo {
 
-}
+// }
 
-class PeopleRepository {
+// class PeopleRepository {
 
-    ArrayList<People> db = new ArrayList<>();
+// ArrayList<People> db = new ArrayList<>();
 
-    /// TODO
-    public ArrayList<People> getDb() {
-        return db;// ???!!!!
-    }
+// /// TODO
+// public static ArrayList<People> getDb() {
+// return db;// ???!!!!
+// }
 
-    void create(People current) {
-        db.add(current);
-    }
+// void create(People current) {
+// db.add(current);
+// }
 
-    People read(int id) {
-        return db.get(id);
-    }
+// People read(int id) {
+// return db.get(id);
+// }
 
-    People read(String fl) {
-        for (People people : db) {
-            if (people.getSurname().equals(fl))
-                return people;
-        }
-        return null;
-    }
-}
+// People read(String fl) {
+// for (People people : db) {
+// if (people.getSurname().equals(fl))
+// return people;
+// }
+// return null;
+// }
+// }
 
-class MarriageRelationsRep {
-    ArrayList<marriageRelations> db = new ArrayList<>();
+// class MarriageRelationsRep {
+// ArrayList<marriageRelations> db = new ArrayList<>();
 
-    public ArrayList<marriageRelations> getDb() {
-        return db;
-    }
+// public ArrayList<marriageRelations> getDb() {
+// return db;
+// }
 
-    void create(marriageRelations current) {
-        db.add(current);
-    }
+// void create(marriageRelations current) {
+// db.add(current);
+// }
 
-    ArrayList<marriageRelations> read(int id) {
-        ArrayList<marriageRelations> t = new ArrayList<>();
+// ArrayList<marriageRelations> read(int id) {
+// ArrayList<marriageRelations> t = new ArrayList<>();
 
-        for (marriageRelations relations : db) {
-            if (relations.getWhoseRelations() == id) {
-                t.add(relations);
-            }
-        }
-        return t;
-    }
+// for (marriageRelations relations : db) {
+// if (relations.getWhoseRelations() == id) {
+// t.add(relations);
+// }
+// }
+// return t;
+// }
 
-}
+// }
 
-class BloodRelationsRep {
+// class BloodRelationsRep {
 
-    void create(bloodRelations current) {
+// void create(bloodRelations current) {
 
-    }
+// }
 
-    bloodRelations read() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-}
+// bloodRelations read() {
+// // TODO Auto-generated method stub
+// return null;
+// }
+// }
 
-class Repos {
-    PeopleRepository pr;
-    MarriageRelationsRep ar;
+// class Repos {
+// PeopleRepository pr;
+// MarriageRelationsRep ar;
 
-    public Repos(PeopleRepository pr, MarriageRelationsRep ar) {
-        this.pr = pr;
-        this.ar = ar;
-    }
+// public Repos(PeopleRepository pr, MarriageRelationsRep ar) {
+// this.pr = pr;
+// this.ar = ar;
+// }
 
-    StringBuilder readCommonList() {
-        StringBuilder sb = new StringBuilder();
+// StringBuilder readCommonList() {
+// StringBuilder sb = new StringBuilder();
 
-        for (People item : pr.getDb()) {
-            sb.append(String.format("%s %s %s\n", item.getName(), item.getSurname(), ar.read(item.getId())));
-        }
+// for (People item : pr.getDb()) {
+// sb.append(String.format("%s %s %s\n", item.getName(), item.getSurname(),
+// ar.read(item.getId())));
+// }
 
-        return sb;
-    }
+// return sb;
+// }
 
-}
+// }
