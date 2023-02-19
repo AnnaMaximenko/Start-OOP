@@ -30,6 +30,7 @@ public class App1 {
     System.out.println(res);
 
   }
+
 }
 
 class People {
@@ -93,7 +94,7 @@ class PeopleRepository {
     return db.get(id);
   }
 
-  People read(String fl) {
+  People Read(String fl) {
     for (People people : db) {
       if (people.fio.equals(fl))
         return people;

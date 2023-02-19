@@ -1,0 +1,77 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Communication",
+            "request": "launch",
+            "mainClass": "Sem2Homework.Communication",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App1",
+            "request": "launch",
+            "mainClass": "App1",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch ResidentOfHouse",
+            "request": "launch",
+            "mainClass": "Sem1Homework.RelationshipsCatandPeople.ResidentOfHouse",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch home",
+            "request": "launch",
+            "mainClass": "Sem1Homework.RelatonshipDresserAndPeople.home",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tree",
+            "request": "launch",
+            "mainClass": "Sem1Homework.Tree.Tree",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch main1",
+            "request": "launch",
+            "mainClass": "Sem1Homework.Tree.main1",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch marriageRelations",
+            "request": "launch",
+            "mainClass": "Sem1Homework.Tree.marriageRelations",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch MarriageRelat",
+            "request": "launch",
+            "mainClass": "Sem2Homework.MarriageRelat",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch PeopleOne",
+            "request": "launch",
+            "mainClass": "Sem2Homework.PeopleOne",
+            "projectName": "Start-OOP_6f6f1733"
+        }
+    ]
+}
