@@ -21,7 +21,11 @@ public class PeopleOne {
         married.Create(new MarriageRelat(3, 4, 0, 0));
         married.Create(new MarriageRelat(4, 3, 0, 0));
 
-        Repo repo = new Repo(peoples, married);
+        RepositoryBloodRelation bloodRel = new RepositoryBloodRelation();
+
+        bloodRel.Create(new BloodRelat(1, 3, 4, 0, 0, null));
+
+        Repo repo = new Repo(peoples, married, bloodRel);
 
         // var res = repo.readPeopleList();
         // System.out.println(res);
@@ -33,6 +37,8 @@ public class PeopleOne {
         System.out.println(repo.Read(3));
         // System.out.println(repo.ReadPartner(2));
         System.out.println("Партнер: " + repo.Read(repo.ReadPartner(3)));
+        // System.out.println("Мама: " + repo.Read(repo.ReadMother(3)));
+        System.out.println(repo.ReadMother(3));
 
     }
 

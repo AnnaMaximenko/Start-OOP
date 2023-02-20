@@ -67,14 +67,46 @@ class RepositoryMerRelation extends Repository {
 
 }
 
+class RepositoryBloodRelation extends Repository {
+
+    ArrayList<BloodRelat> bloodRelation = new ArrayList<>();
+
+    public ArrayList<BloodRelat> getRelation() {
+        return bloodRelation;
+    }
+
+    void Create(BloodRelat current) {
+        bloodRelation.add(current);
+    }
+
+    // MarriageRelat ReadMar(int id) {
+    // return relation.get(id);
+    // }
+
+    ArrayList<BloodRelat> Read(int id) {
+        ArrayList<BloodRelat> t = new ArrayList<>();
+
+        for (BloodRelat relat : bloodRelation) {
+            if (relat.whoseRelations == id) {
+                t.add(relat);
+            }
+        }
+        return t;
+    }
+
+}
+
 class Repo {
     RepositoryPeople repPeopl;
     RepositoryMerRelation repMerRelat;
     ArrayList<PeopleOne> peoples;
+    RepositoryBloodRelation repBloodRelat;
 
-    public Repo(RepositoryPeople repPeopl, RepositoryMerRelation repMerRelat) {
+    public Repo(RepositoryPeople repPeopl, RepositoryMerRelation repMerRelat, RepositoryBloodRelation repBloodRelat) {
         this.repPeopl = repPeopl;
         this.repMerRelat = repMerRelat;
+        this.repBloodRelat = repBloodRelat;
+
     }
 
     StringBuilder readPeopleList() {
@@ -82,7 +114,8 @@ class Repo {
 
         for (PeopleOne item : repPeopl.getDb()) {
             readPeopl.append(
-                    String.format("%s %s %s\n", item.getName(), item.getSurname(), repMerRelat.Read(item.getId())));
+                    String.format("%s %s %s\n", item.getName(), item.getSurname(), repMerRelat.Read(item.getId()),
+                            repBloodRelat.Read((item.getId()))));
         }
 
         return readPeopl;
@@ -120,6 +153,18 @@ class Repo {
             if (id == item.getWhoseRelations()) {
                 readPeopl.append(
                         String.format("%s", item.getPartnerId()));
+            }
+        }
+        return Integer.parseInt(readPeopl.toString());
+    }
+
+    int ReadMother(int id) {
+        StringBuilder readPeopl = new StringBuilder();
+
+        for (BloodRelat item : repBloodRelat.getRelation()) {
+            if (id == item.getWhoseRelations()) {
+                readPeopl.append(
+                        String.format("%s", item.getMotherId()));
             }
         }
         return Integer.parseInt(readPeopl.toString());
