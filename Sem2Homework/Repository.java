@@ -8,6 +8,7 @@ public abstract class Repository {
 }
 
 class RepositoryPeople extends Repository {
+
     ArrayList<PeopleOne> peoples = new ArrayList<>();
 
     public ArrayList<PeopleOne> getDb() {
@@ -50,10 +51,6 @@ class RepositoryMerRelation extends Repository {
         relation.add(current);
     }
 
-    // MarriageRelat ReadMar(int id) {
-    // return relation.get(id);
-    // }
-
     ArrayList<MarriageRelat> Read(int id) {
         ArrayList<MarriageRelat> t = new ArrayList<>();
 
@@ -79,10 +76,6 @@ class RepositoryBloodRelation extends Repository {
         bloodRelation.add(current);
     }
 
-    // MarriageRelat ReadMar(int id) {
-    // return relation.get(id);
-    // }
-
     ArrayList<BloodRelat> Read(int id) {
         ArrayList<BloodRelat> t = new ArrayList<>();
 
@@ -96,17 +89,47 @@ class RepositoryBloodRelation extends Repository {
 
 }
 
+class RepositoryChild extends Repository {
+
+    ArrayList<ChildRelations> childRelation = new ArrayList<>();
+
+    public ArrayList<ChildRelations> getRelation() {
+        return childRelation;
+    }
+
+    void Create(ChildRelations current) {
+        childRelation.add(current);
+    }
+
+    ArrayList<ChildRelations> Read(int id) {
+        ArrayList<ChildRelations> t = new ArrayList<>();
+
+        for (ChildRelations relat : childRelation) {
+            if (relat.whoseRelations == id) {
+                t.add(relat);
+            }
+        }
+        return t;
+    }
+
+}
+
 class Repo {
+
     RepositoryPeople repPeopl;
     RepositoryMerRelation repMerRelat;
     ArrayList<PeopleOne> peoples;
     RepositoryBloodRelation repBloodRelat;
+    RepositoryChild repChildRelation;
 
-    public Repo(RepositoryPeople repPeopl, RepositoryMerRelation repMerRelat, RepositoryBloodRelation repBloodRelat) {
+    public Repo(RepositoryPeople repPeopl,
+            RepositoryMerRelation repMerRelat,
+            RepositoryBloodRelation repBloodRelat,
+            RepositoryChild repChildRelation) {
         this.repPeopl = repPeopl;
         this.repMerRelat = repMerRelat;
         this.repBloodRelat = repBloodRelat;
-
+        this.repChildRelation = repChildRelation;
     }
 
     StringBuilder readPeopleList() {
@@ -114,25 +137,13 @@ class Repo {
 
         for (PeopleOne item : repPeopl.getDb()) {
             readPeopl.append(
-                    String.format("%s %s %s\n", item.getName(), item.getSurname(), repMerRelat.Read(item.getId()),
-                            repBloodRelat.Read((item.getId()))));
+                    String.format("%s %s %s \n", item.getId(), item.getName(), item.getSurname(),
+                            repMerRelat.Read(item.getId()),
+                            repBloodRelat.Read(item.getId()), repChildRelation.Read(item.getId())));
         }
 
         return readPeopl;
     }
-
-    // StringBuilder Read(int id) {
-    // StringBuilder readPeopl = new StringBuilder();
-
-    // for (PeopleOne item : repPeopl.getDb()) {
-    // if (id == item.getId()) {
-    // readPeopl.append(
-    // String.format("%s %s %s", item.getName(), item.getSurname(),
-    // repMerRelat.Read(item.getId())));
-    // }
-    // }
-    // return readPeopl;
-    // }
 
     StringBuilder Read(int id) {
         StringBuilder readPeopl = new StringBuilder();
@@ -168,6 +179,31 @@ class Repo {
             }
         }
         return Integer.parseInt(readPeopl.toString());
+    }
+
+    int ReadFather(int id) {
+        StringBuilder readPeopl = new StringBuilder();
+
+        for (BloodRelat item : repBloodRelat.getRelation()) {
+            if (id == item.getWhoseRelations()) {
+                readPeopl.append(
+                        String.format("%s", item.getFatherId()));
+            }
+        }
+        return Integer.parseInt(readPeopl.toString());
+
+    }
+
+    ArrayList<Integer> ReadChildMother(int id) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for (ChildRelations item : repChildRelation.getRelation()) {
+            if ((id == item.getFatherId()) || (id == item.getMotherId())) {
+                list.add(
+                        Integer.parseInt(String.format("%s", item.getWhoseRelations())));
+            }
+        }
+        return list;
     }
 
 }

@@ -3,9 +3,17 @@ package Sem2Homework;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class PeopleOne {
+public class PeopleOne extends Start {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите действие:\n1-Распечатать список всех людей\n2-Поиск связей человека по ID");
+        System.out.println();
+
+        int number = scanner.nextInt();
+
         RepositoryPeople peoples = new RepositoryPeople();
 
         peoples.Create(new PeopleOne(1, "Елена", "Котикова", "Кириловна", "Женщина", null, null, null, null, null));
@@ -13,6 +21,11 @@ public class PeopleOne {
                 null, null, null, null, null));
         peoples.Create(new PeopleOne(3, "Василий", "Персиков", "Петрович", "Мужчина", null, null, null, null, null));
         peoples.Create(new PeopleOne(4, "Мария", "Персикова", "Николаевна", "Женщина", null, null, null, null, null));
+        peoples.Create(
+                new PeopleOne(5, "Екатерина", "Персикова", "Николаевна", "Женщина", null, null, null, null, null));
+        peoples.Create(new PeopleOne(6, "Михаил", "Персиков", "Николаевич", "Мужчина", null, null, null, null, null));
+        peoples.Create(new PeopleOne(7, "Мария", "Таврикова", "Криловна", "Женщина", null, null, null, null, null));
+        peoples.Create(new PeopleOne(8, "Дмитрий", "Тавриков", "Евгеньевич", "Мужчина", null, null, null, null, null));
 
         RepositoryMerRelation married = new RepositoryMerRelation();
 
@@ -24,21 +37,16 @@ public class PeopleOne {
         RepositoryBloodRelation bloodRel = new RepositoryBloodRelation();
 
         bloodRel.Create(new BloodRelat(1, 3, 4, 0, 0, null));
+        bloodRel.Create(new BloodRelat(2, 7, 8, 0, 0, null));
 
-        Repo repo = new Repo(peoples, married, bloodRel);
+        RepositoryChild children = new RepositoryChild();
 
-        // var res = repo.readPeopleList();
-        // System.out.println(res);
+        children.Create(new ChildRelations(5, 2, 1, 4, 3, null));
+        children.Create(new ChildRelations(6, 2, 1, 4, 3, null));
 
-        // Communication.Partner(repo, 1);
-        // Communication.Partner(repo, 2);
+        Repo repo = new Repo(peoples, married, bloodRel, children);
 
-        // System.out.println(married.Read(1));
-        System.out.println(repo.Read(3));
-        // System.out.println(repo.ReadPartner(2));
-        System.out.println("Партнер: " + repo.Read(repo.ReadPartner(3)));
-        // System.out.println("Мама: " + repo.Read(repo.ReadMother(3)));
-        System.out.println(repo.ReadMother(3));
+        Start.Control(number, repo);
 
     }
 
@@ -54,12 +62,6 @@ public class PeopleOne {
     private String education;// образование
     private List<BloodRelat> relations = new ArrayList<>();
     private List<MarriageRelat> merriRelations = new ArrayList<>();
-
-    // public static void Partner(Repo repo, int id) {
-    // var res = repo.readMer();
-    // System.out.println(res);
-
-    // }
 
     public void addmarriageRelations(MarriageRelat merriRelation) {
         this.merriRelations.add(merriRelation);

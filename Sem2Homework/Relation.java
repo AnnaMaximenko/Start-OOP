@@ -115,6 +115,7 @@ class ChildRelations extends BloodRelat {
             int motherId,
             int grandmotherId,
             int grandfatherId,
+
             List<ChildRelations> children) {
         super(whoseRelations,
                 fatherId,
