@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Pusk",
+            "request": "launch",
+            "mainClass": "Sem2Homework.Pusk",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainOne",
+            "request": "launch",
+            "mainClass": "Sem2Homework.MainOne",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Sem2Homework.Main",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Launch app2",
+            "request": "launch",
+            "mainClass": "sem.app2",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
             "name": "Launch Communication",
             "request": "launch",
             "mainClass": "Sem2Homework.Communication",
