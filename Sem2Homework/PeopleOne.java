@@ -1,6 +1,5 @@
 package Sem2Homework;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +10,6 @@ public class PeopleOne extends Control {
     private String surname;
     private String patronymic;// отчество
     private String gender;
-    private LocalDate dateOfBirth;// LocalDate.of(2017, Month.NOVEMBER, 30)
-    private LocalDate dateOfDeath;// LocalDate.of(2017, Month.NOVEMBER, 30)
-    private String profession;
-    private String placeOfResidence;
-    private String education;// образование
     private List<BloodRelat> relations = new ArrayList<>();
     private List<MarriageRelat> merriRelations = new ArrayList<>();
 
@@ -63,46 +57,16 @@ public class PeopleOne extends Control {
         return gender;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public LocalDate getDateOfDeath() {
-        return dateOfDeath;
-    }
-
-    public String getProfession() {
-        return profession;
-    }
-
-    public String getPlaceOfResidence() {
-        return placeOfResidence;
-    }
-
-    public String getEducation() {
-        return education;
-    }
-
     public PeopleOne(int id,
             String name,
             String surname,
             String patronymic,
-            String gender,
-            LocalDate dateOfBirth,
-            LocalDate dateOfDeath,
-            String profession,
-            String placeOfResidence,
-            String education) {
+            String gender) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfDeath = dateOfDeath;
-        this.profession = profession;
-        this.placeOfResidence = placeOfResidence;
-        this.education = education;
     }
 
     @Override
@@ -111,4 +75,44 @@ public class PeopleOne extends Control {
                 + gender;
     }
 
+    public class Builder {
+        // Обязательные параметры
+        private final int id;
+        private final String name;
+        private final String surname;
+        private final String patronymic;// отчество
+        // Дополнительные параметры - инициализируются значениями по умолчанию
+        private String gender;
+        private List<BloodRelat> relations = new ArrayList<>();
+        private List<MarriageRelat> merriRelations = new ArrayList<>();
+
+        public Builder(int id, String name, String surname, String patronymic) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.patronymic = patronymic;
+
+        }
+
+        public Builder gender(String sex) {
+            gender = sex;
+            return this;
+        }
+
+        public Builder relations(List<BloodRelat> rel) {
+            relations = rel;
+            return this;
+        }
+    }
+
+    public PeopleOne(Builder builder) {
+        id = builder.id;
+        name = builder.name;
+        surname = builder.surname;
+        patronymic = builder.patronymic;
+        gender = builder.gender;
+        relations = builder.relations;
+        merriRelations = builder.merriRelations;
+
+    }
 }

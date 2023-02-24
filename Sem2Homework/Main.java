@@ -1,6 +1,5 @@
 package Sem2Homework;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main extends PeopleOne {
@@ -8,34 +7,29 @@ public class Main extends PeopleOne {
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println(
-                                "Введите действие:\n1-Распечатать список всех людей\n2-Поиск связей человека по ID\n3-Запись в файл связей человека по ID\n4-Запись в файл общего списка");
+                                "Введите действие:\n1-Распечатать список всех людей\n2-Поиск связей человека по ID\n3-Исследование детей\n4-Запись в файл связей человека по ID\n5-Запись в файл общего списка");
                 System.out.println();
 
                 int number = scanner.nextInt();
 
                 RepositoryPeople peoples = new RepositoryPeople();
 
-                peoples.Create(new PeopleOne(1, "Елена", "Котикова", "Кириловна", "Женщина", null, null, null,
-                                null, null));
-                peoples.Create(new PeopleOne(2, "Николай", "Котиков", "Петрович", "Мужчина",
-                                null, null, null, null, null));
-                peoples.Create(
-                                new PeopleOne(3, "Василий", "Персиков", "Петрович", "Мужчина", null, null, null,
-                                                null, null));
-                peoples.Create(
-                                new PeopleOne(4, "Мария", "Персикова", "Николаевна", "Женщина", null, null,
-                                                null, null, null));
-                peoples.Create(
-                                new PeopleOne(5, "Екатерина", "Персикова", "Николаевна", "Женщина", null, null,
-                                                null, null, null));
-                peoples.Create(
-                                new PeopleOne(6, "Михаил", "Персиков", "Николаевич", "Мужчина", null, null,
-                                                null, null, null));
-                peoples.Create(new PeopleOne(7, "Мария", "Таврикова", "Криловна", "Женщина", null, null, null,
-                                null, null));
-                peoples.Create(
-                                new PeopleOne(8, "Дмитрий", "Тавриков", "Евгеньевич", "Мужчина", null, null,
-                                                null, null, null));
+                peoples.Create(new PeopleOne(1, "Елена", "Котикова", "Кириловна",
+                                "Женщина"));
+                peoples.Create(new PeopleOne(2, "Николай", "Котиков", "Петрович",
+                                "Мужчина"));
+                peoples.Create(new PeopleOne(3, "Василий", "Персиков", "Петрович",
+                                "Мужчина"));
+                peoples.Create(new PeopleOne(4, "Мария", "Персикова", "Николаевна",
+                                "Женщина"));
+                peoples.Create(new PeopleOne(5, "Екатерина", "Персикова", "Николаевна",
+                                "Женщина"));
+                peoples.Create(new PeopleOne(6, "Михаил", "Персиков", "Николаевич",
+                                "Мужчина"));
+                peoples.Create(new PeopleOne(7, "Мария", "Таврикова", "Криловна",
+                                "Женщина"));
+                peoples.Create(new PeopleOne(8, "Дмитрий", "Тавриков", "Евгеньевич",
+                                "Мужчина"));
 
                 RepositoryMerRelation married = new RepositoryMerRelation();
 
@@ -59,9 +53,7 @@ public class Main extends PeopleOne {
                 scanner.close();
         }
 
-        public Main(int id, String name, String surname, String patronymic, String gender, LocalDate dateOfBirth,
-                        LocalDate dateOfDeath, String profession, String placeOfResidence, String education) {
-                super(id, name, surname, patronymic, gender, dateOfBirth, dateOfDeath, profession, placeOfResidence,
-                                education);
+        public Main(int id, String name, String surname, String patronymic, String gender) {
+                super(id, name, surname, patronymic, gender);
         }
 }

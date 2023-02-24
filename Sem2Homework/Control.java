@@ -33,9 +33,19 @@ public class Control {
                     break;
                 }
             case 3:
+                System.out.println("Введите ID родителя");
+                int numb = scanner.nextInt();
+                if (numb < 3) {
+                    PrintTreeChild(numb, repo);
+                    break;
+                } else {
+                    System.out.println(
+                            "Ой, недостаточно людей для выполнения вашей просьбы Приложение в разработке! Выберите 1 или 2:)");
+                    break;
+                }
+            case 4:
                 System.out.println("Введите ID");
                 int n = scanner.nextInt();
-
                 if (n < 3) {
                     System.out.println("Идёт запись древа в файл...");
                     SavingTreeID(n, repo);
@@ -47,7 +57,7 @@ public class Control {
                     break;
 
                 }
-            case 4:
+            case 5:
                 System.out.println("Идёт запись общего списка в файл...");
                 Saving(repo);
                 System.out.println("Файл записан");
@@ -63,6 +73,14 @@ public class Control {
         System.out.println("Папа: " + repo.Read(repo.ReadFather(number)));
         ArrayList<Integer> listChildren = repo.ReadChildMother(number);
 
+        for (Integer integer : listChildren) {
+            System.out.println("Ребенок: " + repo.Read(integer));
+        }
+    }
+
+    public static void PrintTreeChild(int number, Repo repo) {
+        System.out.println(repo.Read(number));
+        ArrayList<Integer> listChildren = repo.ReadChildMother(number);
         for (Integer integer : listChildren) {
             System.out.println("Ребенок: " + repo.Read(integer));
         }
