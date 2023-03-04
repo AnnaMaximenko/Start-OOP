@@ -32,15 +32,19 @@ public class Presenter {
     }
 
     public void start() {
+        Logger logger = Logger.getGlobal();
         switch (menu.selectCalc()) {
             case 1:
                 startRation();
+                logger.info("Выбраны рациональные числа");
                 break;
             case 2:
                 startComplex();
+                logger.info("Выбраны комплексные числа");
                 break;
             default:
                 System.out.println("Неверный ввод");
+                logger.info("Ошибка");
                 break;
 
         }
@@ -59,48 +63,61 @@ public class Presenter {
                 System.out.println("Какие числа будем вычитать?");
                 PresenterRation p2 = new PresenterRation(new SubModelRational(), new ViewRational());
                 p2.buttonClick();
+                logger.info("Вычисление прошло успешно");
+
                 break;
             case 3:
                 System.out.println("Какие числа будем умножать?");
                 PresenterRation p3 = new PresenterRation(new MultModelRational(), new ViewRational());
                 p3.buttonClick();
+                logger.info("Вычисление прошло успешно");
+
                 break;
             case 4:
                 System.out.println("Какие числа будем делить?");
                 PresenterRation p4 = new PresenterRation(new DivModelRational(), new ViewRational());
                 p4.buttonClick();
+                logger.info("Вычисление прошло успешно");
+
                 break;
             default:
                 System.out.println("Неверный ввод");
+                logger.info("Ошибка");
                 break;
         }
 
     }
 
     public void startComplex() {
+        Logger logger = Logger.getGlobal();
         switch (menu.selectFunction()) {
             case 1:
                 System.out.println("Какие числа будем суммировать?");
                 PresenterComplex p1 = new PresenterComplex(new SumModelComplex(), new ViewComplex());
                 p1.buttonClick();
+                logger.info("Вычисление прошло успешно");
                 break;
             case 2:
                 System.out.println("Какие числа будем вычитать?");
                 PresenterComplex p2 = new PresenterComplex(new SubModelComplex(), new ViewComplex());
                 p2.buttonClick();
+                logger.info("Вычисление прошло успешно");
                 break;
             case 3:
                 System.out.println("Какие числа будем умножать?");
                 PresenterComplex p3 = new PresenterComplex(new MultModelComplex(), new ViewComplex());
                 p3.buttonClick();
+                logger.info("Вычисление прошло успешно");
                 break;
             case 4:
                 System.out.println("Какие числа будем делить?");
                 PresenterComplex p4 = new PresenterComplex(new DivModelComplex(), new ViewComplex());
                 p4.buttonClick();
+                logger.info("Вычисление прошло успешно");
                 break;
             default:
                 System.out.println("Неверный ввод");
+                logger.info("Ошибка");
                 break;
         }
 
