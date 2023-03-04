@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "Sem5Homework.Program",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
             "name": "Launch Start",
             "request": "launch",
             "mainClass": "Sem4Homework.Start",
