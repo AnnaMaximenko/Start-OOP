@@ -1,8 +1,9 @@
-package Sem5Homework.Controller;
+package Sem6.Controller;
 
-import Sem5Homework.Model.ModelKomplex.Complex;
-import Sem5Homework.Model.ModelKomplex.ModelComplex;
-import Sem5Homework.View.ViewComplex;
+import Sem6.Model.ModelKomplex.Complex;
+import Sem6.Model.ModelKomplex.ComplexPrint;
+import Sem6.Model.ModelKomplex.ModelComplex;
+import Sem6.View.ViewComplex;
 
 public class PresenterComplex {
     ViewComplex view;
@@ -40,9 +41,11 @@ public class PresenterComplex {
 
         Complex result = model.result();
 
-        StringBuilder res = result.print();
+        ComplexPrint res = new ComplexPrint(result);
 
-        view.print(res, "Result: ");
+        StringBuilder finalRes = res.print();
+
+        view.print(finalRes, "Result: ");
     }
 
 }

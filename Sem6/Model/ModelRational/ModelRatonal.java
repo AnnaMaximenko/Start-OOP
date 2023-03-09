@@ -1,4 +1,4 @@
-package Sem5Homework.Model.ModelRational;
+package Sem6.Model.ModelRational;
 
 public interface ModelRatonal {
     double result();

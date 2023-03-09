@@ -1,4 +1,4 @@
-package Sem5Homework.Model.ModelKomplex;
+package Sem6.Model.ModelKomplex;
 
 public interface ModelComplex {
 

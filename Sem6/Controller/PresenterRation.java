@@ -1,7 +1,7 @@
-package Sem5Homework.Controller;
+package Sem6.Controller;
 
-import Sem5Homework.Model.ModelRational.ModelRatonal;
-import Sem5Homework.View.ViewRational;
+import Sem6.Model.ModelRational.ModelRatonal;
+import Sem6.View.ViewRational;
 
 public class PresenterRation {
     ViewRational view;

@@ -1,4 +1,4 @@
-package Sem5Homework.Model.ModelKomplex;
+package Sem6.Model.ModelKomplex;
 
 public class Complex {
 
@@ -29,19 +29,6 @@ public class Complex {
 
     public void setImage(double image) {
         this.image = image;
-    }
-
-    public StringBuilder print() {
-        StringBuilder res = new StringBuilder();
-        if (image > 0) {
-            res.append(real + " + " + image + "i");
-        } else if (image < 0) {
-            res.append(real + "" + image + "i");
-        } else {
-            res.append(real);
-        }
-        return res;
-
     }
 
 }

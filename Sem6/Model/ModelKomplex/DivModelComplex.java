@@ -1,8 +1,8 @@
-package Sem5Homework.Model.ModelKomplex;
+package Sem6.Model.ModelKomplex;
 
-public class SumModelComplex extends CalcModelComplex {
+public class DivModelComplex extends CalcModelComplex {
 
-    public SumModelComplex() {
+    public DivModelComplex() {
 
     }
 
@@ -15,8 +15,8 @@ public class SumModelComplex extends CalcModelComplex {
         double real2 = y.getReal();
         double image2 = y.getImage();
 
-        double newReal = real1 + real2;
-        double newImage = image1 + image2;
+        double newReal = (real1 * real2 + image1 * image2) / (real2 * real2 + image2 * image2);
+        double newImage = (image1 * real2 + real1 * image2) / (real2 * real2 + image2 * image2);
 
         Complex result = new Complex(newReal, newImage);
 

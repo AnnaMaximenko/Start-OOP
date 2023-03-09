@@ -1,4 +1,4 @@
-package Sem5Homework.View;
+package Sem6.View;
 
 import java.util.Scanner;
 

@@ -1,15 +1,15 @@
-package Sem5Homework.Model.ModelRational;
+package Sem6.Model.ModelRational;
 
-public class SubModelRational extends CalcModelRational {
+public class DivModelRational extends CalcModelRational {
 
-    public SubModelRational() {
+    public DivModelRational() {
 
     }
 
     // do_it
     @Override
     public double result() {
-        return x - y;
+        return x / y;
     }
 
     @Override

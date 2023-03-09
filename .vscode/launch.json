@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Program",
             "request": "launch",
+            "mainClass": "Sem6.Program",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
             "mainClass": "Sem5Homework.Program",
             "projectName": "Start-OOP_6f6f1733"
         },
