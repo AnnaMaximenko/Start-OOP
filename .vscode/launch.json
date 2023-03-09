@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "app2",
+            "request": "launch",
+            "mainClass": "Sem7Homework.app2",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
+            "name": "app",
+            "request": "launch",
+            "mainClass": "Sem7Homework.app",
+            "projectName": "Start-OOP_6f6f1733"
+        },
+        {
+            "type": "java",
             "name": "Program",
             "request": "launch",
             "mainClass": "Sem6.Program",
